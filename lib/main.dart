@@ -8,6 +8,7 @@ import 'package:news_app/network/remote/dio_helper.dart';
 import 'package:news_app/news_app/cubit/cubit.dart';
 import 'package:news_app/news_app/cubit/states.dart';
 import 'package:news_app/news_app/new_layout.dart';
+import 'package:news_app/themes.dart';
 
 
 void main() async{
@@ -42,94 +43,10 @@ class MyApp extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           return MaterialApp(
-
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                  scaffoldBackgroundColor: Colors.white,
-                  primarySwatch: Colors.deepOrange,
-                  appBarTheme: AppBarTheme(
-                    titleSpacing: 15.0,
-                      backgroundColor: Colors.white,
-                      elevation: 0.0,
-                      systemOverlayStyle: SystemUiOverlayStyle(
-                        statusBarColor: Colors.white,
-                        statusBarIconBrightness: Brightness.dark,
-                      ),
-                      titleTextStyle: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0
-                      ),
-                      actionsIconTheme: IconThemeData(
-                          color: Colors.black
-                      ),
-                    iconTheme: IconThemeData(
-                      color: Colors.black
-                    )
+              theme: lightTheme,
 
-                  ),
-                  bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                    unselectedItemColor: Colors.brown,
-                    selectedItemColor: Colors.red,
-                    elevation: 0.0,
-
-                  ),
-                  floatingActionButtonTheme: FloatingActionButtonThemeData(
-                      backgroundColor: Colors.brown
-                  ),
-                  textTheme: TextTheme(
-                      headline6: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-
-                          color: Colors.black
-                      )
-
-                  )
-
-              ),
-
-              darkTheme: ThemeData(
-                  primarySwatch: Colors.deepOrange,
-                  scaffoldBackgroundColor: HexColor('333739'),
-                  appBarTheme: AppBarTheme(
-                      backgroundColor: HexColor('333739'),
-                      elevation: 0.0,
-                      titleSpacing: 15.0,
-                      systemOverlayStyle: SystemUiOverlayStyle(
-                        statusBarColor: HexColor('333739'),
-                        statusBarIconBrightness: Brightness.light,
-                      ),
-                      titleTextStyle: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20.0
-                      ),
-                      actionsIconTheme: IconThemeData(
-                          color: Colors.white
-                      ),
-                      iconTheme: IconThemeData(
-                          color: Colors.white
-                      )
-
-                  ),
-                  bottomNavigationBarTheme: BottomNavigationBarThemeData(
-                    backgroundColor: HexColor('333739'),
-                    unselectedItemColor: Colors.grey,
-                    selectedItemColor: Colors.red,
-                    elevation: 0.0,
-
-                  ),
-                  textTheme: TextTheme(
-                      headline6: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white
-                      )
-
-                  )
-
-              ),
+              darkTheme: darkTheme,
               themeMode: NewsCubit.get(context).isDark ? ThemeMode.dark : ThemeMode.light,
 
               home: NewsLayoutScreen()
